@@ -48,7 +48,7 @@ const TransDetailsCard = (props) => {
         <Table>
           <div className="container">
             <div className="row">
-              <div className="col-6 w-100">
+              <div className="col-12 ">
                 <div className="card">
                   <div className="card-header">
                     <div className="card-title">Latest Transictions</div>

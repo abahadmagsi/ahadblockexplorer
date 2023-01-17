@@ -81,89 +81,88 @@ function DetailsCard() {
           </tr>
         </tbody>
       </Table> */}
-      <Table>
-        <div className="container">
-          <div className="row md-column">
-            <div className="col-6 w-70 col-md-12">
-              <div className="card ">
-                <div className="card-header">
-                  <div className="card-title">Latest Blocks</div>
-                </div>
-                <div
-                  className="card-body h-20"
-                  style={{ maxHeight: "500px", overflow: "scroll" }}
-                >
-                  <table className="table table-responsive table-striped flex-row">
-                    <tbody>
-                      {latestBlock.map((val, index) => (
-                        <tr key={index}>
-                          <td>
-                            <Link
-                              to={`blockDetails`}
-                              state={{ number: val.number }}
-                            >
-                              {val.number}
-                            </Link>
-                          </td>
 
-                          <td className="flex-column">{val.miner}</td>
-                          <td>{`${formateTime(val.timestamp).fullYear}-${
-                            formateTime(val.timestamp).month
-                          }-${formateTime(val.timestamp).date} ${
-                            formateTime(val.timestamp).hourse
-                          }:${formateTime(val.timestamp).minutes}:${
-                            formateTime(val.timestamp).seconds
-                          }`}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-                <div className="card-footer">
-                  <div className="col-12 text-center">
-                    <Link href="#">click me</Link>
-                  </div>
+      <div className="container">
+        <div className="row  ">
+          <div className="col-6">
+            <div className="card ">
+              <div className="card-header">
+                <div className="card-title">Latest Blocks</div>
+              </div>
+              <div
+                className="card-body h-20"
+                style={{ maxHeight: "500px", overflow: "scroll" }}
+              >
+                <table className="table table-responsive table-striped flex-row">
+                  <tbody>
+                    {latestBlock.map((val, index) => (
+                      <tr key={index}>
+                        <td>
+                          <Link
+                            to={`blockDetails`}
+                            state={{ number: val.number }}
+                          >
+                            {val.number}
+                          </Link>
+                        </td>
+
+                        <td className="flex-column">{val.miner}</td>
+                        <td>{`${formateTime(val.timestamp).fullYear}-${
+                          formateTime(val.timestamp).month
+                        }-${formateTime(val.timestamp).date} ${
+                          formateTime(val.timestamp).hourse
+                        }:${formateTime(val.timestamp).minutes}:${
+                          formateTime(val.timestamp).seconds
+                        }`}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="card-footer">
+                <div className="col-12 text-center">
+                  <Link href="#">click me</Link>
                 </div>
               </div>
             </div>
-            <div className="col-6 col-md-12">
-              <div className="card">
-                <div className="card-header">
-                  <div className="card-title">Latest Transictions</div>
-                </div>
-                <div
-                  className="card-body h-20"
-                  style={{ maxHeight: "500px", overflow: "scroll" }}
-                >
-                  <table className="table table-responsive table-striped">
-                    <tbody>
-                      {latestTrans.map((val, ind) => (
-                        <tr key={ind}>
-                          {/* {console.log(val)} */}
-                          <td>
-                            <Link to={`transaction`} state={{ hash: val.hash }}>
-                              {`${val.hash}`.slice(0, 10)}
-                            </Link>
-                          </td>
-                          <td>
-                            From {val.from} to {val.to}
-                          </td>
-                          <td>{val.value}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-                <div className="card-footer">
-                  <div className="col-12 text-center">
-                    <Link href="#">click me</Link>
-                  </div>
+          </div>
+          <div className="col-6">
+            <div className="card">
+              <div className="card-header">
+                <div className="card-title">Latest Transictions</div>
+              </div>
+              <div
+                className="card-body h-20"
+                style={{ maxHeight: "500px", overflow: "scroll" }}
+              >
+                <table className="table table-responsive table-striped">
+                  <tbody>
+                    {latestTrans.map((val, ind) => (
+                      <tr key={ind}>
+                        {/* {console.log(val)} */}
+                        <td>
+                          <Link to={`transaction`} state={{ hash: val.hash }}>
+                            {`${val.hash}`.slice(0, 10)}
+                          </Link>
+                        </td>
+                        <td>
+                          From {val.from} to {val.to}
+                        </td>
+                        <td>{val.value}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="card-footer">
+                <div className="col-12 text-center">
+                  <Link href="#">click me</Link>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </Table>
+      </div>
     </Grid>
   );
 }
