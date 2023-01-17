@@ -83,8 +83,8 @@ function DetailsCard() {
       </Table> */}
       <Table>
         <div className="container">
-          <div className="row">
-            <div className="col-6 w-70">
+          <div className="row md-column">
+            <div className="col-6 w-70 col-md-12">
               <div className="card ">
                 <div className="card-header">
                   <div className="card-title">Latest Blocks</div>
@@ -126,7 +126,7 @@ function DetailsCard() {
                 </div>
               </div>
             </div>
-            <div className="col-6">
+            <div className="col-6 col-md-12">
               <div className="card">
                 <div className="card-header">
                   <div className="card-title">Latest Transictions</div>

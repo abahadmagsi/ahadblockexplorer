@@ -5,16 +5,15 @@ import Table from "react-bootstrap/Table";
 import { Link } from "react-router-dom";
 const TransDetailsCard = (props) => {
   const [transDetails, setTransDetails] = useState();
-  const apiKey = process.env.REACT_APP_ETHERSCAN_API_KEY;
+  // const apiKey = process.env.REACT_APP_ETHERSCAN_API_KEY;
 
   useEffect(() => {
     async function fetchTrasaction() {
       try {
         const response = await fetch(
-          `https://api.etherscan.io/api?module=proxy&action=eth_getTransactionByHash&txhash=0x5c504ed432cb51138bcf09aa5e8a410dd4a1e204ef84bfed1be16dfba1b22060&apikey=${apiKey}`
+          `https://api.etherscan.io/api?module=proxy&action=eth_getTransactionByHash&txhash=0x5c504ed432cb51138bcf09aa5e8a410dd4a1e204ef84bfed1be16dfba1b22060&apikey=P2WS5R9HJT5YCEIG48RN8FN6HW996N8Z78`
         );
         const data = await response.json();
-        console.log(data);
         setTransDetails(data);
       } catch (err) {
         alert("503: Internal Server Error.");
@@ -54,10 +53,7 @@ const TransDetailsCard = (props) => {
                   <div className="card-header">
                     <div className="card-title">Latest Transictions</div>
                   </div>
-                  <div
-                    className="card-body h-20"
-                    style={{ maxHeight: "500px", overflow: "scroll" }}
-                  >
+                  <div className="card-body h-20">
                     <table className="table table-responsive table-striped">
                       {transDetails ? (
                         <tbody>

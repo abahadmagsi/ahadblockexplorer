@@ -34,7 +34,7 @@ const BlockDeails = (props) => {
           const response = await fetch(
             `https://api.etherscan.io/api?module=proxy&action=eth_getBlockByNumber&tag=${props.props.toString(
               16
-            )}&boolean=true&apikey=${apiKey}`
+            )}&boolean=true&apikey=P2WS5R9HJT5YCEIG48RN8FN6HW996N8Z78`
           );
           const data = await response.json();
 
